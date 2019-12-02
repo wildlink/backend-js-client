@@ -1,0 +1,38 @@
+# compiled output
+/out-tsc
+/lib
+
+# dependencies
+**/node_modules
+
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings
+*.sublime-workspace
+.vscode
+.history
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+*.log
+/typings
+.vs
+logs
+report.*.json
+
+# System Files
+.DS_Store
+.DS_Store*
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
