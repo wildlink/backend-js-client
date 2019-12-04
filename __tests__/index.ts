@@ -6,7 +6,6 @@ const mockAppKey = 'appKey';
 const mockDeviceToken = 'deviceToken';
 const mockDeviceKey = 'deviceKey';
 const mockDeviceId = 0;
-const mockDeviceUuid = 'deviceUuid';
 
 const MockWildlinkClient = jest.fn<WildlinkClient, [number, string]>().mockImplementation((appId, appKey) => {
   return Object.assign(new WildlinkClient(appId, appKey), {
@@ -15,7 +14,6 @@ const MockWildlinkClient = jest.fn<WildlinkClient, [number, string]>().mockImple
         DeviceToken: mockDeviceToken,
         DeviceKey: this.deviceKey || mockDeviceKey,
         DeviceID: mockDeviceId,
-        UUID: mockDeviceUuid,
       });
     },
   });
@@ -110,16 +108,6 @@ describe('WildlinkClient', () => {
 
     it('should return device id', () => {
       expect(client.getDeviceId()).toBe(mockDeviceId);
-    });
-  });
-
-  describe('getDeviceUuid()', () => {
-    it('should be defined', () => {
-      expect(client.getDeviceUuid).toBeInstanceOf(Function);
-    });
-
-    it('should return device id', () => {
-      expect(client.getDeviceUuid()).toBe(mockDeviceUuid);
     });
   });
 
