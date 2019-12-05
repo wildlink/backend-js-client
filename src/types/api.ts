@@ -21,5 +21,4 @@ export interface Device {
   DeviceToken: string;
   DeviceKey: string;
   DeviceID: number;
-  UUID: string;
 }

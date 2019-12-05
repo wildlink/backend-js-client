@@ -13,7 +13,6 @@ export class WildlinkClient {
   private deviceToken = '';
   private deviceKey = '';
   private deviceId = 0;
-  private deviceUuid = '';
 
   constructor(appId: number, appKey: string) {
     if (typeof appId === 'undefined') {
@@ -36,12 +35,11 @@ export class WildlinkClient {
     this.deviceKey = deviceKey;
 
     try {
-      const { DeviceToken, DeviceKey, DeviceID, UUID } = await this.createDevice();
+      const { DeviceToken, DeviceKey, DeviceID } = await this.createDevice();
 
       this.deviceToken = DeviceToken;
       this.deviceKey = DeviceKey;
       this.deviceId = DeviceID;
-      this.deviceUuid = UUID;
 
       this.isInit = true;
     } catch (error) {
@@ -59,10 +57,6 @@ export class WildlinkClient {
 
   getDeviceId(): number {
     return this.deviceId;
-  }
-
-  getDeviceUuid(): string {
-    return this.deviceUuid;
   }
 
   getDomains(): Promise<Domain[]> {
