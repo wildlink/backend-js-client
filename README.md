@@ -32,11 +32,7 @@ const WLClient = new WildlinkClient(appId, appKey);
 
 // 3. Initialize
 
-// deviceKey is optional and a new device will be created if omitted
-// Define it if you want to create a new "session" with a previously created device
-const deviceKey = '';
-
-WLClient.init(deviceKey).then(() => {
+WLClient.init().then(() => {
   // deviceId is used for referencing the device in reporting data
   const deviceId = WLClient.getDeviceId();
   // deviceKey is used for authenticating the device in the future - it doesn't expire
